@@ -15,9 +15,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 	config.vm.provision "docker" do |d|
 
-		d.build_image "/vagrant", args: "-t jinx/elasticsearch"
+		# TODO: Fix image with working Marvel...
+		# d.build_image "/vagrant", args: "-t jinx/elasticsearch"
+		# d.run "jinx/elasticsearch",
 
-		d.run "jinx/elasticsearch", 
+		d.run "dockerfile/elasticsearch", 
 			args: "-p 9200:9200 -p 9300:9300 -v /var/elasticsearch:/data",
 			cmd: "/elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml"
 	end
