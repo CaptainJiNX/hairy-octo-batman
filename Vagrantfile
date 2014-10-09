@@ -4,6 +4,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.box = "precise64"
 	config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
+	config.vm.provider "virtualbox" do |v|
+		v.memory = 2048
+		v.cpus = 4
+	end
+
 	config.vm.provision "shell", inline: "rm -fr /var/elasticsearch"
 	config.vm.provision "shell", inline: "mkdir /var/elasticsearch"
 	config.vm.provision "shell", inline: "cp /vagrant/elasticsearch.yml /var/elasticsearch"
