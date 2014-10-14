@@ -1,8 +1,6 @@
-cluster.name: jinx
-node.name: "Captain JiNX"
-
 path.data: /data/data
 path.logs: /data/logs
+path.work: /data/work
 
 http.type: com.sonian.elasticsearch.http.jetty.JettyHttpServerTransportModule
 
