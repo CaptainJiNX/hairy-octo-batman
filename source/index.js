@@ -8,18 +8,18 @@ var client = new elasticsearch.Client({
 client.indices.create({
   index: 'myindex'
 }).then(function() {
-    client.create({
-    index: 'myindex',
-    type: 'mytype',
-    id: '1',
-    body: {
-      title: 'Test 1',
-      tags: ['y', 'z'],
-      published: true,
-      published_at: '2013-01-01',
-      counter: 1
-    }
-  });
+    client.index({
+      index: 'myindex',
+      type: 'mytype',
+      id: '1',
+      body: {
+        title: 'Test 1',
+        tags: ['y', 'z'],
+        published: true,
+        published_at: '2013-01-01',
+        counter: 1
+      }
+    });
 });
 
 var app = express();
