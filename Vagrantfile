@@ -12,10 +12,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.provision "shell", inline: "mkdir -p /var/elasticsearch"
 
 	config.vm.provision "docker" do |d|
-		d.build_image "/vagrant", args: "-t jinx/elasticsearch"
-		d.run "jinx/elasticsearch", args: "-p 9200:9200 -p 9300:9300 -v /var/elasticsearch:/data"
+		d.build_image "/vagrant/jinx-elasticsearch", args: "-t jinx/elasticsearch"
+		d.build_image "/vagrant/jinx-nodejs", args: "-t jinx/nodejs"
+		d.run "jinx/elasticsearch", args: "-v /var/elasticsearch:/data"
+		d.run "jinx/nodejs", args: "-p 8080:8080 --link jinx-elasticsearch:db"
 	end
 
-	config.vm.network "forwarded_port", guest: 9200, host: 9200
-	config.vm.network "forwarded_port", guest: 9300, host: 9300
+	config.vm.network "forwarded_port", guest: 8080, host: 8080
 end

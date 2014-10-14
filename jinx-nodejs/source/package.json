@@ -1,0 +1,15 @@
+{
+  "name": "NinjazApp",
+  "version": "1.0.0",
+  "description": "Just a test app from Captain JiNX",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roger Wilson",
+  "license": "MIT",
+  "dependencies": {
+    "elasticsearch": "^2.4.3",
+    "express": "^4.9.5"
+  }
+}
