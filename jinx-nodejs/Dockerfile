@@ -3,7 +3,8 @@ FROM dockerfile/nodejs
 RUN npm install forever -g
 
 VOLUME ["/opt/app"]
+WORKDIR /opt/app
 
-CMD forever /opt/app/index.js
+CMD ["bash"]
 
 EXPOSE 8080
