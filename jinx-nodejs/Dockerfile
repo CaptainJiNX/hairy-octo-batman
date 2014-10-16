@@ -2,8 +2,10 @@
 FROM dockerfile/nodejs
 RUN npm install forever -g
 
-VOLUME ["/opt/app"]
-WORKDIR /opt/app
+VOLUME ["/usr/local/src"]
+
+RUN mkdir -p /usr/local/src
+WORKDIR /usr/local/src
 
 CMD ["bash"]
 

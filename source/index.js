@@ -1,7 +1,7 @@
 var express = require('express');
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
-  host: 'jinx:bl4h0nga@db:9200',
+  host: 'db:9200',
   log: 'trace'
 });
 

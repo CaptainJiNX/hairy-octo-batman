@@ -1,10 +1,3 @@
 path.data: /data/data
 path.logs: /data/logs
 path.work: /data/work
-
-http.type: com.sonian.elasticsearch.http.jetty.JettyHttpServerTransportModule
-
-sonian.elasticsearch.http.jetty:
-	config: jetty.xml,jetty-hash-auth.xml,jetty-restrict-writes.xml
-
-marvel.agent.exporter.es.hosts: ["jinx:bl4h0ng4@localhost:9200"]
