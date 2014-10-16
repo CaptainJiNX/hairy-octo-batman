@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
 			d.name = "jinx-elasticsearch"
 			d.build_dir = "./jinx-elasticsearch"
 			d.build_args = ["-t=jinx/elasticsearch"]
+			d.ports = ["9200:9200"]
 			d.remains_running = true
 			d.vagrant_machine = "#{DOCKER_HOST_NAME}"
 			d.vagrant_vagrantfile = "#{DOCKER_HOST_VAGRANTFILE}"
